@@ -237,9 +237,9 @@ export default function HeroCinematic() {
 
     /* ==============================================================
        2. MOBILE TIMELINE (< 1024px)
-       - Living Room Reveal: 4.5s (t = 3.9s -> 8.4s)
-       - Kitchen Reveal: 4.5s (t = 9.6s -> 14.1s)
-       - Total Timeline Duration: 14.9s
+       - Living Room Reveal: 2.2s (t = 3.9s -> 6.1s)
+       - Kitchen Reveal: 2.2s (t = 7.3s -> 9.5s)
+       - Total Timeline Duration: 10.3s
        ============================================================== */
     mm.add("(max-width: 1023px)", () => {
       let { targetScale, targetX, targetY } = getCenteringParams();
@@ -289,14 +289,14 @@ export default function HeroCinematic() {
       tl.to(mobileBeforeClipWrapper, { autoAlpha: 1, duration: 1.0, ease: "power1.out" }, 1.8);
       tl.set(mobileAfterLayer, { autoAlpha: 1 }, 2.8);
 
-      // Step 4: Badges Arm & Living Room Reveal (4.5s sweep)
+      // Step 4: Badges Arm & Living Room Reveal (2.2s sweep)
       tl.to([tvBeforeBadge, tvAfterBadge], { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 3.6);
       tl.fromTo(mobileSliderDivider, { autoAlpha: 0, left: "100%", opacity: 1 }, { autoAlpha: 1, duration: 0.2, ease: "power1.out" }, 3.9);
 
       const sliderState1 = { pos: 100 };
       tl.to(sliderState1, {
         pos: 0,
-        duration: 4.5,
+        duration: 2.2,
         ease: "power1.inOut",
         onUpdate: () => {
           const p = sliderState1.pos;
@@ -311,8 +311,8 @@ export default function HeroCinematic() {
         },
       }, 3.9);
 
-      tl.to(mobileSliderDivider, { autoAlpha: 0, duration: 0.25, ease: "power1.in" }, 8.4);
-      tl.to([tvBeforeBadge, tvAfterBadge], { autoAlpha: 0, y: -10, duration: 0.3, ease: "power1.in" }, 8.4);
+      tl.to(mobileSliderDivider, { autoAlpha: 0, duration: 0.25, ease: "power1.in" }, 6.1);
+      tl.to([tvBeforeBadge, tvAfterBadge], { autoAlpha: 0, y: -10, duration: 0.3, ease: "power1.in" }, 6.1);
 
       // Step 5: Transition to Kitchen
       tl.set({}, {
@@ -320,19 +320,19 @@ export default function HeroCinematic() {
           if (hudBeforeLayer) hudBeforeLayer.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
           if (hudAfterLayer) hudAfterLayer.style.clipPath = "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)";
         },
-      }, 8.65);
+      }, 6.35);
 
-      tl.to(mobileKitchenBeforeClipWrapper, { autoAlpha: 1, duration: 0.8, ease: "power1.inOut" }, 8.7);
-      tl.to([mobileAfterLayer, mobileBeforeClipWrapper], { autoAlpha: 0, duration: 0.5, ease: "power1.inOut" }, 9.0);
-      tl.set(mobileKitchenAfterLayer, { autoAlpha: 1 }, 9.5);
-      tl.to([tvKitchenBeforeBadge, tvKitchenAfterBadge], { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 8.8);
+      tl.to(mobileKitchenBeforeClipWrapper, { autoAlpha: 1, duration: 0.8, ease: "power1.inOut" }, 6.4);
+      tl.to([mobileAfterLayer, mobileBeforeClipWrapper], { autoAlpha: 0, duration: 0.5, ease: "power1.inOut" }, 6.7);
+      tl.set(mobileKitchenAfterLayer, { autoAlpha: 1 }, 7.2);
+      tl.to([tvKitchenBeforeBadge, tvKitchenAfterBadge], { autoAlpha: 1, y: 0, duration: 0.35, ease: "power2.out" }, 6.5);
 
-      // Step 6: 2nd Split Slider Sweep (Kitchen - 4.5s sweep)
+      // Step 6: 2nd Split Slider Sweep (Kitchen - 2.2s sweep)
       const sliderState2 = { pos: 100 };
-      tl.fromTo(mobileSliderDivider, { autoAlpha: 0, left: "100%", opacity: 1 }, { autoAlpha: 1, duration: 0.2, ease: "power1.out" }, 9.6);
+      tl.fromTo(mobileSliderDivider, { autoAlpha: 0, left: "100%", opacity: 1 }, { autoAlpha: 1, duration: 0.2, ease: "power1.out" }, 7.3);
       tl.to(sliderState2, {
         pos: 0,
-        duration: 4.5,
+        duration: 2.2,
         ease: "power1.inOut",
         onUpdate: () => {
           const p = sliderState2.pos;
@@ -345,13 +345,13 @@ export default function HeroCinematic() {
             if (hudAfterLayer) hudAfterLayer.style.clipPath = `polygon(${xPx}px 0, 100% 0, 100% 100%, ${xPx}px 100%)`;
           }
         },
-      }, 9.6);
+      }, 7.3);
 
-      tl.to(mobileSliderDivider, { autoAlpha: 0, duration: 0.25, ease: "power1.in" }, 14.1);
-      tl.to([tvKitchenBeforeBadge, tvKitchenAfterBadge], { autoAlpha: 0, y: -10, duration: 0.3, ease: "power1.in" }, 14.15);
+      tl.to(mobileSliderDivider, { autoAlpha: 0, duration: 0.25, ease: "power1.in" }, 9.5);
+      tl.to([tvKitchenBeforeBadge, tvKitchenAfterBadge], { autoAlpha: 0, y: -10, duration: 0.3, ease: "power1.in" }, 9.55);
 
       // Step 7: Settle & Unpin
-      tl.to({}, { duration: 0.5 }, 14.4);
+      tl.to({}, { duration: 0.5 }, 9.8);
     });
 
     return () => mm.revert();
