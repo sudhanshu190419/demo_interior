@@ -478,7 +478,7 @@ export default function HeroCinematic() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/interior/before-after/slices/kitchen-before.png"
-                    alt="Before — Original Kitchen"
+                    alt="Before — Raw Kitchen"
                     className="w-full h-full object-cover object-center pointer-events-none"
                     draggable={false}
                   />
@@ -629,50 +629,19 @@ export default function HeroCinematic() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/interior/before-after/slices/kitchen-before-mobile.png"
-              alt="Before — Original Kitchen"
+              alt="Before — Raw Kitchen"
               className="w-full h-full object-cover object-center pointer-events-none"
               draggable={false}
             />
           </div>
 
-          {/* Mobile Slider Divider Line & Handle */}
+          {/* Mobile Slider Divider Guide (Invisible positioning anchor for HUD clipping) */}
           <div
             ref={mobileSliderDividerRef}
             id="mobile-tv-slider-divider"
             className="absolute top-0 bottom-0 z-25 pointer-events-none"
             style={{ left: "0%" }}
-          >
-            {/* Vertical Glowing Divider Line */}
-            <div className="absolute top-0 bottom-0 -left-[1px] w-[2px] bg-gradient-to-b from-white via-[#c6a77d] to-white shadow-[0_0_12px_rgba(198,167,125,0.8)]" />
-
-            {/* Circular Handle */}
-            <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/95 backdrop-blur-md shadow-2xl border border-black/10 flex items-center justify-center pointer-events-auto hover:scale-110 transition-transform">
-              <svg
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1a1a1a]"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="15 18 9 12 15 6" />
-                <polyline points="9 18 3 12 9 6" />
-              </svg>
-              <svg
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#1a1a1a] -ml-1.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6" />
-                <polyline points="15 18 21 12 15 6" />
-              </svg>
-            </div>
-          </div>
+          />
         </div>
 
         {/* ==============================================================
@@ -692,14 +661,16 @@ export default function HeroCinematic() {
                 {/* Living Room Before */}
                 <div
                   ref={tvBeforeBadgeRef}
-                  className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#101010]/75 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+                  className="inline-flex flex-col items-start lg:flex-row lg:items-center gap-0.5 lg:gap-2.5 px-3 sm:px-3.5 lg:px-4 py-1.5 sm:py-1.5 lg:py-2 rounded-xl lg:rounded-full bg-[#101010]/80 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none whitespace-nowrap w-max"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/50 ring-2 ring-white/10" />
-                  <span className="text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold">
-                    BEFORE
-                  </span>
-                  <span className="w-[1px] h-3 bg-white/20" />
-                  <span className="text-[11px] sm:text-xs font-sans tracking-[0.16em] text-[#eae4d9] uppercase font-light">
+                  <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/50 ring-2 ring-white/10 shrink-0" />
+                    <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold whitespace-nowrap">
+                      BEFORE
+                    </span>
+                  </div>
+                  <span className="hidden lg:block w-[1px] h-3 bg-white/20 shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] lg:text-xs font-sans tracking-[0.14em] lg:tracking-[0.16em] text-[#eae4d9] uppercase font-light whitespace-nowrap">
                     Raw Shell
                   </span>
                 </div>
@@ -707,15 +678,17 @@ export default function HeroCinematic() {
                 {/* Kitchen Before */}
                 <div
                   ref={tvKitchenBeforeBadgeRef}
-                  className="absolute inset-0 inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#101010]/75 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+                  className="absolute top-0 left-0 inline-flex flex-col items-start lg:flex-row lg:items-center gap-0.5 lg:gap-2.5 px-3 sm:px-3.5 lg:px-4 py-1.5 sm:py-1.5 lg:py-2 rounded-xl lg:rounded-full bg-[#101010]/80 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none whitespace-nowrap w-max"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/50 ring-2 ring-white/10" />
-                  <span className="text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold">
-                    BEFORE
-                  </span>
-                  <span className="w-[1px] h-3 bg-white/20" />
-                  <span className="text-[11px] sm:text-xs font-sans tracking-[0.16em] text-[#eae4d9] uppercase font-light">
-                    Original Kitchen
+                  <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/50 ring-2 ring-white/10 shrink-0" />
+                    <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold whitespace-nowrap">
+                      BEFORE
+                    </span>
+                  </div>
+                  <span className="hidden lg:block w-[1px] h-3 bg-white/20 shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] lg:text-xs font-sans tracking-[0.14em] lg:tracking-[0.16em] text-[#eae4d9] uppercase font-light whitespace-nowrap">
+                    Raw Kitchen
                   </span>
                 </div>
               </div>
@@ -741,14 +714,16 @@ export default function HeroCinematic() {
                 {/* Living Room After */}
                 <div
                   ref={tvAfterBadgeRef}
-                  className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#142217]/80 backdrop-blur-xl border border-[#c6a77d]/40 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+                  className="inline-flex flex-col items-start lg:flex-row lg:items-center gap-0.5 lg:gap-2.5 px-3 sm:px-3.5 lg:px-4 py-1.5 sm:py-1.5 lg:py-2 rounded-xl lg:rounded-full bg-[#142217]/85 backdrop-blur-xl border border-[#c6a77d]/40 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none whitespace-nowrap w-max"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c6a77d] shadow-[0_0_8px_rgba(198,167,125,0.9)]" />
-                  <span className="text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold">
-                    AFTER
-                  </span>
-                  <span className="w-[1px] h-3 bg-[#c6a77d]/30" />
-                  <span className="text-[11px] sm:text-xs font-sans tracking-[0.16em] text-[#fbf8f3] uppercase font-light">
+                  <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c6a77d] shadow-[0_0_8px_rgba(198,167,125,0.9)] shrink-0" />
+                    <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold whitespace-nowrap">
+                      AFTER
+                    </span>
+                  </div>
+                  <span className="hidden lg:block w-[1px] h-3 bg-[#c6a77d]/30 shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] lg:text-xs font-sans tracking-[0.14em] lg:tracking-[0.16em] text-[#fbf8f3] uppercase font-light whitespace-nowrap">
                     Curated Living
                   </span>
                 </div>
@@ -756,14 +731,16 @@ export default function HeroCinematic() {
                 {/* Kitchen After */}
                 <div
                   ref={tvKitchenAfterBadgeRef}
-                  className="absolute inset-0 inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#142217]/80 backdrop-blur-xl border border-[#c6a77d]/40 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+                  className="absolute top-0 right-0 inline-flex flex-col items-start lg:flex-row lg:items-center gap-0.5 lg:gap-2.5 px-3 sm:px-3.5 lg:px-4 py-1.5 sm:py-1.5 lg:py-2 rounded-xl lg:rounded-full bg-[#142217]/85 backdrop-blur-xl border border-[#c6a77d]/40 shadow-[0_8px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none whitespace-nowrap w-max"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c6a77d] shadow-[0_0_8px_rgba(198,167,125,0.9)]" />
-                  <span className="text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold">
-                    AFTER
-                  </span>
-                  <span className="w-[1px] h-3 bg-[#c6a77d]/30" />
-                  <span className="text-[11px] sm:text-xs font-sans tracking-[0.16em] text-[#fbf8f3] uppercase font-light">
+                  <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#c6a77d] shadow-[0_0_8px_rgba(198,167,125,0.9)] shrink-0" />
+                    <span className="text-[9px] sm:text-[10px] font-mono tracking-[0.25em] text-[#c6a77d] uppercase font-semibold whitespace-nowrap">
+                      AFTER
+                    </span>
+                  </div>
+                  <span className="hidden lg:block w-[1px] h-3 bg-[#c6a77d]/30 shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] lg:text-xs font-sans tracking-[0.14em] lg:tracking-[0.16em] text-[#fbf8f3] uppercase font-light whitespace-nowrap">
                     Culinary Suite
                   </span>
                 </div>
