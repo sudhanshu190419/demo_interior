@@ -70,8 +70,9 @@ export default function HeroCinematic() {
         // Target scale to completely fill viewport edges
         const scaleX = window.innerWidth / screenRect.width;
         const scaleY = window.innerHeight / screenRect.height;
-        // 5% margin ensures the TV bezel travels completely off-screen
-        const targetScale = Math.max(scaleX, scaleY) * 1.05;
+        // On portrait / phone screens, use 1.20 margin to cover dynamic address bars; on desktop keep 1.05
+        const isPortrait = window.innerHeight > window.innerWidth;
+        const targetScale = Math.max(scaleX, scaleY) * (isPortrait ? 1.2 : 1.05);
 
         // Required translation at targetScale with transform-origin: 50% 50%
         const targetX = -ox * targetScale;
@@ -460,9 +461,9 @@ export default function HeroCinematic() {
       ref={pinSectionRef}
       id="hero-cinematic-pinned-section"
       className="relative w-full bg-[#0d0d0d] overflow-hidden"
-      style={{ height: "100vh" }}
+      style={{ height: "100dvh" }}
     >
-      {/* Pinned Viewport Stage (100vw x 100vh) */}
+      {/* Pinned Viewport Stage (100vw x 100dvh) */}
       <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
         {/* ==============================================================
             CAMERA RIG (Base Room + Masked TV Screen Layer)
@@ -480,7 +481,7 @@ export default function HeroCinematic() {
             style={{
               aspectRatio: "1675 / 939",
               minWidth: "100vw",
-              minHeight: "100vh",
+              minHeight: "100dvh",
             }}
           >
             {/* 1. Base Room Scene */}
