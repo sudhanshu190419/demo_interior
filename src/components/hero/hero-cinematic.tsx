@@ -60,18 +60,21 @@ export default function HeroCinematic() {
         const tvCenterX = screenRect.left + screenRect.width / 2;
         const tvCenterY = screenRect.top + screenRect.height / 2;
 
-        const vpCenterX = window.innerWidth / 2;
-        const vpCenterY = window.innerHeight / 2;
+        const curWidth = window.visualViewport?.width || window.innerWidth;
+        const curHeight = window.visualViewport?.height || window.innerHeight;
+
+        const vpCenterX = curWidth / 2;
+        const vpCenterY = curHeight / 2;
 
         // Offset from viewport center at scale 1
         const ox = tvCenterX - vpCenterX;
         const oy = tvCenterY - vpCenterY;
 
         // Target scale to completely fill viewport edges
-        const scaleX = window.innerWidth / screenRect.width;
-        const scaleY = window.innerHeight / screenRect.height;
+        const scaleX = curWidth / screenRect.width;
+        const scaleY = curHeight / screenRect.height;
         // On portrait / phone screens, use 1.65 margin to guarantee 100% full-bleed coverage across ultra-tall aspect ratios and mobile browser bars; on desktop keep 1.05
-        const isPortrait = window.innerHeight > window.innerWidth;
+        const isPortrait = curHeight > curWidth;
         const targetScale = Math.max(scaleX, scaleY) * (isPortrait ? 1.65 : 1.05);
 
         // Required translation at targetScale with transform-origin: 50% 50%
@@ -82,6 +85,31 @@ export default function HeroCinematic() {
       };
 
       let { targetScale, targetX, targetY } = getCenteringParams();
+
+      // Mobile VisualViewport synchronization: keep pinned stage & centering dynamically sized as mobile address bar collapses/expands
+      const handleVisualViewportResize = () => {
+        if (!window.visualViewport) return;
+        const vh = window.visualViewport.height;
+
+        if (pinSection) {
+          pinSection.style.height = `${vh}px`;
+          const pinSpacer = pinSection.parentElement?.classList.contains("pin-spacer")
+            ? (pinSection.parentElement as HTMLElement)
+            : null;
+          if (pinSpacer) {
+            pinSpacer.style.height = `${vh}px`;
+          }
+        }
+
+        const updated = getCenteringParams();
+        targetScale = updated.targetScale;
+        targetX = updated.targetX;
+        targetY = updated.targetY;
+      };
+
+      if (typeof window !== "undefined" && window.visualViewport) {
+        window.visualViewport.addEventListener("resize", handleVisualViewportResize);
+      }
 
       // Initial element states
       gsap.set(cameraRig, {
@@ -451,6 +479,12 @@ export default function HeroCinematic() {
         },
         9.0
       );
+
+      return () => {
+        if (typeof window !== "undefined" && window.visualViewport) {
+          window.visualViewport.removeEventListener("resize", handleVisualViewportResize);
+        }
+      };
     }, pinSectionRef);
 
     return () => ctx.revert();
