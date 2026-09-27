@@ -11,6 +11,7 @@ export default function SelectedWorkSection() {
   const watermarkRef = useRef<HTMLDivElement>(null);
   const mobileStageRef = useRef<HTMLDivElement>(null);
   const mobileWatermarkRef = useRef<HTMLDivElement>(null);
+  const mobileCard5Ref = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   // Card element refs for desktop scroll assembly & subtle parallax
@@ -51,12 +52,14 @@ export default function SelectedWorkSection() {
       mm.add("(min-width: 1024px)", () => {
         if (!stage) return;
 
-        // Pin the "INTERIORS" watermark fixed in the center of the viewport when reached
+        // Pin the "INTERIORS" watermark fixed in the center of the viewport when reached,
+        // and start moving upward with the section once cards 05 and 06 are centered in the viewport
         if (watermarkRef.current) {
           ScrollTrigger.create({
             trigger: stage,
             start: "top center",
-            end: "bottom center",
+            endTrigger: card5Ref.current || stage,
+            end: "center center",
             pin: watermarkRef.current,
             pinSpacing: false,
             invalidateOnRefresh: true,
@@ -155,7 +158,8 @@ export default function SelectedWorkSection() {
           ScrollTrigger.create({
             trigger: mobileStageRef.current,
             start: "top center",
-            end: "bottom center",
+            endTrigger: mobileCard5Ref.current || mobileStageRef.current,
+            end: "center center",
             pin: mobileWatermarkRef.current,
             pinSpacing: false,
             invalidateOnRefresh: true,
@@ -573,7 +577,7 @@ export default function SelectedWorkSection() {
           </div>
 
           {/* 5. 05 BATHROOM */}
-          <div className="group flex flex-col">
+          <div ref={mobileCard5Ref} className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[4/3] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

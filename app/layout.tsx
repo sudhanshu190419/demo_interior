@@ -35,17 +35,39 @@ export default function RootLayout({
           rel="preload"
           href="/interior/base/tv-room.png"
           as="image"
+          media="(min-width: 1024px)"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/interior/base/tv-room-mobile.png"
+          as="image"
+          media="(max-width: 1023px)"
           fetchPriority="high"
         />
         <link
           rel="preload"
           href="/interior/before-after/slices/living-room-before.png"
           as="image"
+          media="(min-width: 1024px)"
+        />
+        <link
+          rel="preload"
+          href="/interior/before-after/slices/living-room-before-mobile.png"
+          as="image"
+          media="(max-width: 1023px)"
         />
         <link
           rel="preload"
           href="/interior/before-after/slices/living-room-after.png"
           as="image"
+          media="(min-width: 1024px)"
+        />
+        <link
+          rel="preload"
+          href="/interior/before-after/slices/living-room-after-mobile.png"
+          as="image"
+          media="(max-width: 1023px)"
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#101010] text-[#E8E2D9] font-sans">
