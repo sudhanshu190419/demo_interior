@@ -68,3 +68,14 @@ body {
   outline: none;
 }
 
+/* Mobile Hero Dynamic Viewport Stretch on Active Pin */
+@media (max-width: 1023px) {
+  #hero-cinematic-pinned-section[style*="position: fixed"],
+  #hero-cinematic-pinned-section[style*="position:fixed"] {
+    top: 0 !important;
+    bottom: 0 !important;
+    height: auto !important;
+  }
+}
+
+
