@@ -70,9 +70,9 @@ export default function HeroCinematic() {
         // Target scale to completely fill viewport edges
         const scaleX = window.innerWidth / screenRect.width;
         const scaleY = window.innerHeight / screenRect.height;
-        // On portrait / phone screens, use 1.20 margin to cover dynamic address bars; on desktop keep 1.05
+        // On portrait / phone screens, use 1.65 margin to guarantee 100% full-bleed coverage across ultra-tall aspect ratios and mobile browser bars; on desktop keep 1.05
         const isPortrait = window.innerHeight > window.innerWidth;
-        const targetScale = Math.max(scaleX, scaleY) * (isPortrait ? 1.2 : 1.05);
+        const targetScale = Math.max(scaleX, scaleY) * (isPortrait ? 1.65 : 1.05);
 
         // Required translation at targetScale with transform-origin: 50% 50%
         const targetX = -ox * targetScale;
