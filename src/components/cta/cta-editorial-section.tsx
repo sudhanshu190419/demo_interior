@@ -65,13 +65,18 @@ export default function CtaEditorialSection() {
         ref={bgImageRef}
         className="absolute inset-[-6%] w-[112%] h-[112%] pointer-events-none z-0"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/interior/cta.png"
-          alt="Sunlit architectural luxury interior villa with courtyard garden"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
+        {/* Progressive picture element with AVIF, WebP, and fallback */}
+        <picture className="h-full w-full block">
+          <source type="image/avif" srcSet="/interior/cta.avif" />
+          <source type="image/webp" srcSet="/interior/cta.webp" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/interior/cta.png"
+            alt="Sunlit architectural luxury interior villa with courtyard garden"
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </picture>
         {/* Soft atmospheric overlay for high-contrast typography readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/60 via-[#FAF7F2]/20 to-transparent pointer-events-none lg:w-3/5" />
       </div>

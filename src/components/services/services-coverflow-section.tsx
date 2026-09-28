@@ -327,13 +327,18 @@ export default function ServicesCoverflowSection() {
                   </div>
 
                   {/* Service Image */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={service.src}
-                    alt={service.alt}
-                    draggable={false}
-                    className="h-full w-full select-none object-cover object-center"
-                  />
+                  <picture className="h-full w-full block">
+                    <source type="image/avif" srcSet={service.src.replace(/\.png$/, ".avif")} />
+                    <source type="image/webp" srcSet={service.src.replace(/\.png$/, ".webp")} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={service.src.replace(/\.png$/, ".webp")}
+                      alt={service.alt}
+                      draggable={false}
+                      className="h-full w-full select-none object-cover object-center"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               ))}
             </div>

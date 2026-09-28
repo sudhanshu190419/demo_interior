@@ -390,11 +390,29 @@ export default function HeroCinematic() {
               <picture className="w-full h-full block">
                 <source
                   media="(max-width: 1023px)"
+                  type="image/avif"
+                  srcSet="/interior/base/tv-room-mobile.avif"
+                />
+                <source
+                  media="(max-width: 1023px)"
+                  type="image/webp"
+                  srcSet="/interior/base/tv-room-mobile.webp"
+                />
+                <source
+                  media="(max-width: 1023px)"
                   srcSet="/interior/base/tv-room-mobile.png"
+                />
+                <source
+                  type="image/avif"
+                  srcSet="/interior/base/tv-room.avif"
+                />
+                <source
+                  type="image/webp"
+                  srcSet="/interior/base/tv-room.webp"
                 />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/interior/base/tv-room.png"
+                  src="/interior/base/tv-room.webp"
                   alt="Luxury living room with TV"
                   className="w-full h-full object-cover object-center pointer-events-none"
                   draggable={false}
@@ -424,13 +442,17 @@ export default function HeroCinematic() {
                   id="desktop-tv-after-layer"
                   className="absolute inset-0 w-full h-full overflow-hidden"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/interior/before-after/slices/living-room-after.png"
-                    alt="After — Curated Living"
-                    className="w-full h-full object-cover object-center pointer-events-none"
-                    draggable={false}
-                  />
+                  <picture className="w-full h-full block">
+                    <source type="image/avif" srcSet="/interior/before-after/slices/living-room-after.avif" />
+                    <source type="image/webp" srcSet="/interior/before-after/slices/living-room-after.webp" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/interior/before-after/slices/living-room-after.webp"
+                      alt="After — Curated Living"
+                      className="w-full h-full object-cover object-center pointer-events-none"
+                      draggable={false}
+                    />
+                  </picture>
                 </div>
 
                 {/* Layer 3: Living Room BEFORE Image (Desktop) */}
@@ -442,13 +464,17 @@ export default function HeroCinematic() {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/interior/before-after/slices/living-room-before.png"
-                    alt="Before — Raw Shell"
-                    className="w-full h-full object-cover object-center pointer-events-none"
-                    draggable={false}
-                  />
+                  <picture className="w-full h-full block">
+                    <source type="image/avif" srcSet="/interior/before-after/slices/living-room-before.avif" />
+                    <source type="image/webp" srcSet="/interior/before-after/slices/living-room-before.webp" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/interior/before-after/slices/living-room-before.webp"
+                      alt="Before — Raw Shell"
+                      className="w-full h-full object-cover object-center pointer-events-none"
+                      draggable={false}
+                    />
+                  </picture>
                 </div>
 
                 {/* Layer 4: Kitchen AFTER Image (Desktop) */}
@@ -457,13 +483,17 @@ export default function HeroCinematic() {
                   id="desktop-tv-kitchen-after-layer"
                   className="absolute inset-0 w-full h-full overflow-hidden"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/interior/before-after/slices/kitchen-after.png"
-                    alt="After — Culinary Suite"
-                    className="w-full h-full object-cover object-center pointer-events-none"
-                    draggable={false}
-                  />
+                  <picture className="w-full h-full block">
+                    <source type="image/avif" srcSet="/interior/before-after/slices/kitchen-after.avif" />
+                    <source type="image/webp" srcSet="/interior/before-after/slices/kitchen-after.webp" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/interior/before-after/slices/kitchen-after.webp"
+                      alt="After — Culinary Suite"
+                      className="w-full h-full object-cover object-center pointer-events-none"
+                      draggable={false}
+                    />
+                  </picture>
                 </div>
 
                 {/* Layer 5: Kitchen BEFORE Image (Desktop) */}
@@ -475,13 +505,17 @@ export default function HeroCinematic() {
                     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/interior/before-after/slices/kitchen-before.png"
-                    alt="Before — Raw Kitchen"
-                    className="w-full h-full object-cover object-center pointer-events-none"
-                    draggable={false}
-                  />
+                  <picture className="w-full h-full block">
+                    <source type="image/avif" srcSet="/interior/before-after/slices/kitchen-before.avif" />
+                    <source type="image/webp" srcSet="/interior/before-after/slices/kitchen-before.webp" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/interior/before-after/slices/kitchen-before.webp"
+                      alt="Before — Raw Kitchen"
+                      className="w-full h-full object-cover object-center pointer-events-none"
+                      draggable={false}
+                    />
+                  </picture>
                 </div>
 
                 {/* Desktop Slider Divider Guide (Invisible positioning anchor for HUD clipping) */}
@@ -575,13 +609,17 @@ export default function HeroCinematic() {
             id="mobile-tv-after-layer"
             className="absolute inset-0 w-full h-full overflow-hidden"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/interior/before-after/slices/living-room-after-mobile.png"
-              alt="After — Curated Living"
-              className="w-full h-full object-cover object-center pointer-events-none"
-              draggable={false}
-            />
+            <picture className="w-full h-full block">
+              <source type="image/avif" srcSet="/interior/before-after/slices/living-room-after-mobile.avif" />
+              <source type="image/webp" srcSet="/interior/before-after/slices/living-room-after-mobile.webp" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/interior/before-after/slices/living-room-after-mobile.webp"
+                alt="After — Curated Living"
+                className="w-full h-full object-cover object-center pointer-events-none"
+                draggable={false}
+              />
+            </picture>
           </div>
 
           {/* Layer 3: Living Room BEFORE Image (Mobile Portrait) */}
@@ -593,13 +631,17 @@ export default function HeroCinematic() {
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/interior/before-after/slices/living-room-before-mobile.png"
-              alt="Before — Raw Shell"
-              className="w-full h-full object-cover object-center pointer-events-none"
-              draggable={false}
-            />
+            <picture className="w-full h-full block">
+              <source type="image/avif" srcSet="/interior/before-after/slices/living-room-before-mobile.avif" />
+              <source type="image/webp" srcSet="/interior/before-after/slices/living-room-before-mobile.webp" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/interior/before-after/slices/living-room-before-mobile.webp"
+                alt="Before — Raw Shell"
+                className="w-full h-full object-cover object-center pointer-events-none"
+                draggable={false}
+              />
+            </picture>
           </div>
 
           {/* Layer 4: Kitchen AFTER Image (Mobile Portrait) */}
@@ -608,13 +650,17 @@ export default function HeroCinematic() {
             id="mobile-tv-kitchen-after-layer"
             className="absolute inset-0 w-full h-full overflow-hidden"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/interior/before-after/slices/kitchen-after-mobile.png"
-              alt="After — Culinary Suite"
-              className="w-full h-full object-cover object-center pointer-events-none"
-              draggable={false}
-            />
+            <picture className="w-full h-full block">
+              <source type="image/avif" srcSet="/interior/before-after/slices/kitchen-after-mobile.avif" />
+              <source type="image/webp" srcSet="/interior/before-after/slices/kitchen-after-mobile.webp" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/interior/before-after/slices/kitchen-after-mobile.webp"
+                alt="After — Culinary Suite"
+                className="w-full h-full object-cover object-center pointer-events-none"
+                draggable={false}
+              />
+            </picture>
           </div>
 
           {/* Layer 5: Kitchen BEFORE Image (Mobile Portrait) */}
@@ -626,13 +672,17 @@ export default function HeroCinematic() {
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/interior/before-after/slices/kitchen-before-mobile.png"
-              alt="Before — Raw Kitchen"
-              className="w-full h-full object-cover object-center pointer-events-none"
-              draggable={false}
-            />
+            <picture className="w-full h-full block">
+              <source type="image/avif" srcSet="/interior/before-after/slices/kitchen-before-mobile.avif" />
+              <source type="image/webp" srcSet="/interior/before-after/slices/kitchen-before-mobile.webp" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/interior/before-after/slices/kitchen-before-mobile.webp"
+                alt="Before — Raw Kitchen"
+                className="w-full h-full object-cover object-center pointer-events-none"
+                draggable={false}
+              />
+            </picture>
           </div>
 
           {/* Mobile Slider Divider Guide (Invisible positioning anchor for HUD clipping) */}

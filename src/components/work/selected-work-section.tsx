@@ -266,13 +266,17 @@ export default function SelectedWorkSection() {
             className="group absolute top-[40px] left-[2%] w-[27%] max-w-[370px] z-10 flex flex-col"
           >
             <div className="relative w-full overflow-hidden aspect-[4/3] bg-[#EAE4D9] rounded-[2px] shadow-[0_12px_32px_rgba(0,0,0,0.04)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-[#E5DFD5]/90 transition-all duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/living_room.png"
-                alt="Modern Living Room with custom joinery and natural sunlight"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/living_room.avif" />
+                <source type="image/webp" srcSet="/interior/work/living_room.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/living_room.webp"
+                  alt="Modern Living Room with custom joinery and natural sunlight"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Metadata Below */}
             <div className="mt-3 flex flex-col gap-1 w-full">
@@ -295,13 +299,17 @@ export default function SelectedWorkSection() {
             className="group absolute top-[640px] xl:top-[680px] left-[2%] w-[27%] max-w-[370px] z-10 flex flex-col"
           >
             <div className="relative w-full overflow-hidden aspect-[4/3] bg-[#EAE4D9] rounded-[2px] shadow-[0_12px_32px_rgba(0,0,0,0.04)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-[#E5DFD5]/90 transition-all duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/bathroom.png"
-                alt="Minimalist luxury bathroom with natural stone basin"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/bathroom.avif" />
+                <source type="image/webp" srcSet="/interior/work/bathroom.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/bathroom.webp"
+                  alt="Minimalist luxury bathroom with natural stone basin"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Metadata Below */}
             <div className="mt-3 flex flex-col gap-1 w-full">
@@ -332,13 +340,17 @@ export default function SelectedWorkSection() {
                 FEATURED WORK
               </div>
 
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/main.png"
-                alt="Courtyard House — flagship luxury interior architecture"
-                className="w-full h-full object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/main.avif" />
+                <source type="image/webp" srcSet="/interior/work/main.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/main.webp"
+                  alt="Courtyard House — flagship luxury interior architecture"
+                  className="w-full h-full object-cover object-center transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.025]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
             {/* Featured Metadata Bar */}
@@ -385,13 +397,17 @@ export default function SelectedWorkSection() {
             </div>
 
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] shadow-[0_12px_32px_rgba(0,0,0,0.04)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-[#E5DFD5]/90 transition-all duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/kitchen.png"
-                alt="Bespoke culinary kitchen with marble island and warm timber cabinetry"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/kitchen.avif" />
+                <source type="image/webp" srcSet="/interior/work/kitchen.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/kitchen.webp"
+                  alt="Bespoke culinary kitchen with marble island and warm timber cabinetry"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
 
@@ -401,13 +417,17 @@ export default function SelectedWorkSection() {
             className="group absolute top-[370px] xl:top-[390px] right-[2%] w-[27%] max-w-[370px] z-10 flex flex-col"
           >
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] shadow-[0_12px_32px_rgba(0,0,0,0.04)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-[#E5DFD5]/90 transition-all duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/bedroom.png"
-                alt="Master bedroom with bespoke headboard and soft ambient lighting"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/bedroom.avif" />
+                <source type="image/webp" srcSet="/interior/work/bedroom.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/bedroom.webp"
+                  alt="Master bedroom with bespoke headboard and soft ambient lighting"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Metadata Below */}
             <div className="mt-3 flex flex-col gap-1 w-full">
@@ -430,13 +450,17 @@ export default function SelectedWorkSection() {
             className="group absolute top-[700px] xl:top-[740px] right-[2%] w-[27%] max-w-[370px] z-10 flex flex-col"
           >
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] shadow-[0_12px_32px_rgba(0,0,0,0.04)] group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-[#E5DFD5]/90 transition-all duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/dining.png"
-                alt="Contemporary dining area with warm timber table"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/dining.avif" />
+                <source type="image/webp" srcSet="/interior/work/dining.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/dining.webp"
+                  alt="Contemporary dining area with warm timber table"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Metadata Below */}
             <div className="mt-3 flex flex-col gap-1 w-full">
@@ -482,13 +506,17 @@ export default function SelectedWorkSection() {
               <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#101010]/80 backdrop-blur-md border border-white/15 text-[9px] font-mono tracking-[0.25em] text-[#C6A77D] uppercase font-semibold">
                 FEATURED WORK
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/main.png"
-                alt="Courtyard House — flagship luxury interior architecture"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/main.avif" />
+                <source type="image/webp" srcSet="/interior/work/main.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/main.webp"
+                  alt="Courtyard House — flagship luxury interior architecture"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3.5 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355] font-semibold">
@@ -510,13 +538,17 @@ export default function SelectedWorkSection() {
           {/* 2. 01 LIVING ROOM */}
           <div className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[4/3] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/living_room.png"
-                alt="Living room interior"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/living_room.avif" />
+                <source type="image/webp" srcSet="/interior/work/living_room.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/living_room.webp"
+                  alt="Living room interior"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355]">
@@ -533,13 +565,17 @@ export default function SelectedWorkSection() {
           {/* 3. 02 KITCHEN */}
           <div className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/kitchen.png"
-                alt="Modern kitchen"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/kitchen.avif" />
+                <source type="image/webp" srcSet="/interior/work/kitchen.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/kitchen.webp"
+                  alt="Modern kitchen"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355]">
@@ -556,13 +592,17 @@ export default function SelectedWorkSection() {
           {/* 4. 03 BEDROOM */}
           <div className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/bedroom.png"
-                alt="Bedroom retreat"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/bedroom.avif" />
+                <source type="image/webp" srcSet="/interior/work/bedroom.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/bedroom.webp"
+                  alt="Bedroom retreat"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355]">
@@ -579,13 +619,17 @@ export default function SelectedWorkSection() {
           {/* 5. 05 BATHROOM */}
           <div ref={mobileCard5Ref} className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[4/3] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/bathroom.png"
-                alt="Bathroom space"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/bathroom.avif" />
+                <source type="image/webp" srcSet="/interior/work/bathroom.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/bathroom.webp"
+                  alt="Bathroom space"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355]">
@@ -602,13 +646,17 @@ export default function SelectedWorkSection() {
           {/* 6. 06 DINING */}
           <div className="group flex flex-col">
             <div className="relative w-full overflow-hidden aspect-[16/10] bg-[#EAE4D9] rounded-[2px] border border-[#E5DFD5]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/interior/work/dining.png"
-                alt="Dining area"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
+              <picture className="w-full h-full block">
+                <source type="image/avif" srcSet="/interior/work/dining.avif" />
+                <source type="image/webp" srcSet="/interior/work/dining.webp" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/interior/work/dining.webp"
+                  alt="Dining area"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div className="mt-3 flex flex-col gap-1 w-full">
               <div className="flex items-center justify-between gap-3 text-xs tracking-[0.2em] font-mono text-[#8C7355]">
